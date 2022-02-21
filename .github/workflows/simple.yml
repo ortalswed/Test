@@ -1,0 +1,12 @@
+name: Shell Commands
+on: [push]
+jobs:
+  run-shell-command:
+  runs-on: ubutu-latest
+  steps:
+   - name: echo
+     run: echo "hello world"
+   - name: multiline script
+     run: |
+       node -v
+       npm -v
