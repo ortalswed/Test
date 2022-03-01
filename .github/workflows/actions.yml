@@ -1,10 +1,10 @@
 name: Actions workflow
 on: 
   push:
-  pull_request:
-    types: [closed, assigned, opened, repoened]
+  #pull_request:
+  #  types: [closed, assigned, opened, repoened]
 env:
-  WF_ENV: available to all jobs
+  WF_ENV: ${{secrets.WF_ENV}}
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
