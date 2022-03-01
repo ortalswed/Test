@@ -1,8 +1,6 @@
 name: Actions workflow
 on: 
   push:
-   branches:
-     - master
   pull_request:
     types: [closed, assigned, opened, repoened]
 env:
