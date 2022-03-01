@@ -4,7 +4,7 @@ on:
   #pull_request:
   #  types: [closed, assigned, opened, repoened]
 env:
-  WF_ENV: ${{secrets.WF_ENV}}
+  WF_ENV: ${{secrets.ortal}}
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
