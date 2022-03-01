@@ -1,10 +1,12 @@
 name: Actions workflow
 on: 
-  schedule:
-    - cron: "19 12 * * *"
   push:
+   branches:
+     - master
   pull_request:
     types: [closed, assigned, opened, repoened]
+env:
+  WF_ENV: available to all jobs
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
@@ -13,6 +15,7 @@ jobs:
         run: |
           pwd
           ls -a
+          echo "WF_ENV: ${WF_ENV}"
       - name: checkout
         uses: actions/checkout@v2
       - name: list files after checkout
