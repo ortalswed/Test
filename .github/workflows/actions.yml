@@ -13,7 +13,7 @@ jobs:
         run: |
           pwd
           ls -a
-          echo "WF_ENV: ${WF_ENV}"
+          echo "WF_ENV is ${WF_ENV}"
       - name: checkout
         uses: actions/checkout@v2
       - name: list files after checkout
