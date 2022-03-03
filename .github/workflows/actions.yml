@@ -11,6 +11,7 @@ jobs:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
         node_version: [6,8,10]
+        wf
       runs-on: ${{matrix.os}}
       steps:
         - name: Log node version
