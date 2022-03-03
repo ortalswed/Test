@@ -6,8 +6,19 @@ on:
 env:
   WF_ENV: ${{secrets.ortal}}
 jobs:
+  setup-node:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log node version
+        run: node -v
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 6
+      - name: Log node version
+        run: node -v
   functions:
     runs-on: ubuntu-latest
+    timeout-minutes: 180
     steps:
       - name: call github functions
         run: |
@@ -15,6 +26,7 @@ jobs:
           echo ${{startsWith('hello','he')}}
           echo ${{endsWith('hello','lo')}}
           echo ${{format('hello {0} {1} {2}','World','!','!')}}
+        continue-on-error: true
 
   create-issue:
     runs-on: ubuntu-latest
