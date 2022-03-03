@@ -11,15 +11,15 @@ jobs:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
         node_version: [6, 8, 10]
-      runs-on: ${{matrix.os}}
-      steps:
-        - name: Log node version
-          run: node -v
-        - uses: actions/setup-node@3.0.0
-          with: 
-            node-version: ${{matrix.node_version}}
-        - name: Log node version
-          run: node -v
+    runs-on: ${{matrix.os}}
+    steps:
+     - name: Log node version
+       run: node -v
+     - uses: actions/setup-node@3.0.0
+       with: 
+         node-version: ${{matrix.node_version}}
+     - name: Log node version
+       run: node -v
 
   setup-node:
     runs-on: ubuntu-latest
